@@ -6,6 +6,7 @@ import java.awt.Font;
 import javax.swing.JButton;
 import javax.swing.JPanel;
 
+@SuppressWarnings("serial")
 public class GameView extends JPanel{
     public GameView(){
         this.setMinimumSize(new Dimension(500,500));

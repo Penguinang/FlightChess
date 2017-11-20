@@ -12,6 +12,7 @@ import javax.imageio.ImageIO;
 /**
  * 自定义的图片类
  */
+@SuppressWarnings("serial")
 class ImageComponent extends Component{
     BufferedImage img;
     
