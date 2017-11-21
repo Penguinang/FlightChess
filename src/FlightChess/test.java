@@ -3,7 +3,6 @@ package FlightChess;
 import java.awt.Dimension;
 
 import javax.swing.JFrame;
-import javax.swing.event.TreeSelectionEvent;
 
 import FlightChess.View.MainView;
 
@@ -22,7 +21,7 @@ public class test{
          frame.setContentPane(mainView);
          frame.setVisible(true);
 
-        //FlightChess.View.testView t = new FlightChess.View.testView();
-        //t.main(args);
+        // FlightChess.View.testView t = new FlightChess.View.testView();
+        // t.main(args);
     }
 }
