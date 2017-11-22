@@ -12,8 +12,15 @@ public class Game {
 	private Random dice_generator;
 	/**终点坐标*/
 	public static final int final_grid = 35; 
-	/**道具1坐标 多走一步*/
-	public static final int[] prop1_grid = {6,34};
+	/**道具1坐标 多走一轮*/
+	public static final int[] prop1_grid = {1,2,3};
+	/**道具2坐标 后退五步*/
+	public static final int[] prop2_grid = {4,5,6};
+	/**道具3坐标 暂停一轮*/
+	public static final int[] prop3_grid = {7,8,9};
+	/**道具4坐标 前进五步*/
+	public static final int[] prop4_grid = {10,11,12};
+	/**道具5坐标 
 
 	
 	
@@ -34,8 +41,11 @@ public class Game {
 	
 	public void checkCurrentGrid() {
 		//到达终点
-		if(this.getCurrentBoat().getCurrent_pos()==35) {
-			
+		
+		int i;
+		for(i=0;i<prop1_grid.length;i++) {
+			if(this.getCurrentBoat().getCurrent_pos()==prop1_grid[i]) {
+			}
 		}
 		
 	}
