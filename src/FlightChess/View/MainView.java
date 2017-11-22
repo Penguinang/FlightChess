@@ -59,4 +59,10 @@ public class MainView extends JPanel {
         startObservers.add(observer);
         return true;
     }
+
+
+    //=======================getters and setters==========================
+    public GameView getGameView(){
+        return gameView;
+    }
 }

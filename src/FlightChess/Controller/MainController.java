@@ -4,7 +4,8 @@ import FlightChess.View.MainView;
 import FlightChess.View.StartButtonObserver;
 
 public class MainController implements StartButtonObserver{
-    MainView mainView;
+    private MainView mainView;
+    private GameController gameController;
 
     public MainController(MainView mainView){
         this.mainView = mainView;
@@ -13,7 +14,10 @@ public class MainController implements StartButtonObserver{
 
     @Override
     public void OnGameStarted(){
+        //XXX
         mainView.StartGame();
+
+        gameController = new GameController(mainView.getGameView());
     }
 
 }
