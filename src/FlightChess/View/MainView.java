@@ -40,6 +40,7 @@ public class MainView extends JPanel {
      */
     public GameView StartGame() {
         startView.setVisible(false);
+        this.remove(startView);
 
         gameView = new GameView();
         this.add(gameView);
