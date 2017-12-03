@@ -4,6 +4,7 @@ import java.awt.Dimension;
 
 import javax.swing.JFrame;
 
+import FlightChess.Controller.MainController;
 import FlightChess.View.MainView;
 
 public class test{
@@ -21,7 +22,6 @@ public class test{
          frame.setContentPane(mainView);
          frame.setVisible(true);
 
-        // FlightChess.View.testView t = new FlightChess.View.testView();
-        // t.main(args);
+         MainController mainController = new MainController(mainView);
     }
 }

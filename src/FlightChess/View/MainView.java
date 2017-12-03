@@ -40,6 +40,7 @@ public class MainView extends JPanel {
      */
     public GameView StartGame() {
         startView.setVisible(false);
+        this.remove(startView);
 
         gameView = new GameView();
         this.add(gameView);
@@ -58,5 +59,11 @@ public class MainView extends JPanel {
     public boolean AddStartObserver(StartButtonObserver observer) {
         startObservers.add(observer);
         return true;
+    }
+
+
+    //=======================getters and setters==========================
+    public GameView getGameView(){
+        return gameView;
     }
 }
