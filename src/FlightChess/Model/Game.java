@@ -2,6 +2,7 @@ package FlightChess.Model;
 
 import java.util.Random;
 
+import FlightChess.View.GameView;
 import FlightChess.View.MainView;
 
 /** 
@@ -13,20 +14,13 @@ public class Game {
     private Boat[] boats;
     /** random number generator */
     private Random dice_generator;
-    private MainView mainview;
 
     /** the state of game */
     private boolean game_state = true;
     /** The current activated boat */
 	private int current_boat;
 	
-	public MainView getMainview() {
-		return mainview;
-	}
-
-	public void setMainview(MainView mainview) {
-		this.mainview = mainview;
-	}
+	
 
 	/** Terminal coordinates */
 	public static final int FINAL_GRID = 34; 
@@ -67,9 +61,10 @@ public class Game {
 	 * Produce a random integer between 1-6 (the function of the dice) and let the ship move forward
 	 * @return a random integer between 1-6
 	 */
-	public int onClickDice(){
+	public int onClickDice(GameView gv){
 		int dice = dice_generator.nextInt(5)+1;
-		this.getCurrentBoat().advance(dice,this);
+		gv.PlayDiceAnimation(dice);
+		this.getCurrentBoat().advance(dice,gv);
 		return dice;
 	}
 	
@@ -82,17 +77,17 @@ public class Game {
 	}
 	
 	/** Check whether the ship's current position has a prop and make a respond */
-	public void checkCurrentGrid() {
+	public void checkCurrentGrid(GameView gv) {
 		int i;
 		for(i = 0;i<PROP1_GRID.length;i++) {
 			if(this.boats[this.current_boat].getCurrent_pos()==PROP1_GRID[i]) {
-				this.boats[this.current_boat].advance(FOWARD_STEP,this);
+				this.boats[this.current_boat].advance(FOWARD_STEP,gv);
 				System.out.println(this.getCurrent_boat()+"吃到道具1,多走5格");
 			}
 		}
 		for(i=0;i<PROP2_GRID.length;i++) {
 			if(this.boats[this.current_boat].getCurrent_pos()==PROP2_GRID[i]) {
-				this.boats[this.current_boat].advance(BACK_STEP,this);
+				this.boats[this.current_boat].advance(BACK_STEP,gv);
 				System.out.println(this.getCurrent_boat()+"吃到道具2,后退5格");
 				
 			}
@@ -126,11 +121,11 @@ public class Game {
 	 * check the winner
 	 * @return the ID of the winner
 	 */
-	public int checkWinner() {
+	public int checkWinner(GameView gv) {
 		for(int i=0;i<this.boats.length;i++) {
 			if(this.boats[i].getCurrent_pos()==FINAL_GRID) {
 				System.out.println("船"+i+"获胜");
-				//this.getMainview().getGameView().gameEnd(i);
+				//gv.gameEnd(i);
 				this.game_state = false;
 				return i;
 			}
@@ -148,30 +143,7 @@ public class Game {
 		System.out.println("----------------------------------");
 	}
      
-     //游戏过程
-    
-      public void runGame() {
-    	 while(game_state) {
-    			 System.out.println(this.getCurrent_boat()+"船走了"+this.onClickDice()+"步");
-    			 this.checkCurrentGrid();
-    			 this.checkWinner();
-    			 this.switchPlayer();
-    			 if(this.getCurrent_boat()==0) {
-    				 showCurrentState();
-    		 }
-    	 }
-     }
-  
-
-    //Model测试
    
-       public static void main(String[] args) {
-    
-    	Game g = new Game();
-    	g.runGame();
-    }
-    
-
     public int getCurrent_boat() {
         return current_boat;
     }
@@ -231,4 +203,5 @@ public class Game {
     public void setCurrent_boat(int current_boat) {
         this.current_boat = current_boat;
     }
+
 }

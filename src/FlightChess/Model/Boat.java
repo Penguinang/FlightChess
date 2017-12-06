@@ -1,5 +1,7 @@
 package FlightChess.Model;
 
+import FlightChess.View.GameView;
+
 /**
  * 小船类
  */
@@ -28,9 +30,9 @@ public class Boat {
 	 * @param i Forward step
 	 * @param g Game view
 	 */
-	public void advance(int i,Game g) {
+	public void advance(int i,GameView gv) {
 		this.setCurrent_pos((this.current_pos+i)%35);
-		//g.getMainview().getGameView().AdvanceForBoatByStep(g.getCurrent_boat(),i);
+		//gv.advanceForBoatByStep(this.id,i);
 	}
 	
 	
