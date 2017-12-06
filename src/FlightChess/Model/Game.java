@@ -129,7 +129,7 @@ public class Game {
 			if(this.boats[i].getCurrent_pos()==FINAL_GRID) {
 				System.out.println("船"+i+"获胜");
 				this.game_state = false;
-				//gv.gameEnd(i);
+				gv.gameEnd(i);
 				return i;
 			}
 		}
