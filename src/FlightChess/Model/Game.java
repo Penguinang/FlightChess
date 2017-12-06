@@ -139,8 +139,8 @@ public class Game {
 	}
      
      //游戏过程
-     /*
-      * public void runGame() {
+    /*
+      public void runGame() {
     	 while(game_state) {
     			 System.out.println(this.getCurrent_boat()+"船走了"+this.onClickDice()+"步");
     			 this.checkCurrentGrid();
@@ -151,11 +151,11 @@ public class Game {
     		 }
     	 }
      }
-     */
+    */
 
     //Model测试
     /*
-     *  public static void main(String[] args) {
+       public static void main(String[] args) {
     
  		Game g = new Game();
  		g.runGame();
