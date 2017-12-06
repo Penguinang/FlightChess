@@ -121,11 +121,11 @@ public class Game {
 	 * check the winner
 	 * @return the ID of the winner
 	 */
-	public int checkWinner() {
+	public int checkWinner(GameView gv) {
 		for(int i=0;i<this.boats.length;i++) {
 			if(this.boats[i].getCurrent_pos()==FINAL_GRID) {
 				System.out.println("船"+i+"获胜");
-				//this.getMainview().getGameView().gameEnd(i);
+				//gv.gameEnd(i);
 				this.game_state = false;
 				return i;
 			}
