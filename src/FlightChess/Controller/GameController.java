@@ -16,9 +16,6 @@ public class GameController implements DiceClickObserver{
 
     @Override
     public void OnDiceClicked(){
-        //XXX
-        game.onClickDice();
-        
-        gameView.PlayDiceAnimation(3);
+        game.onClickDice(gameView);
     }
 }

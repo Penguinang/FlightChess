@@ -75,6 +75,13 @@ public class GameView extends JPanel{
         return true;
     }
 
+    /** 
+     * Move boat
+     */
+    public void advanceForBoatByStep(int id,int step){
+        gamePanel.moveBoat(id, step);
+    }
+
     /**
      * Play Dice Animation
      * @param number the dice number to play
