@@ -1,11 +1,6 @@
 package FlightChess.View;
 
 import java.awt.BorderLayout;
-import java.awt.Color;
-import java.awt.GridBagConstraints;
-import java.awt.TextArea;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 import java.util.ArrayList;
@@ -13,7 +8,6 @@ import java.util.Random;
 
 import javax.swing.Icon;
 import javax.swing.ImageIcon;
-import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 
@@ -22,7 +16,7 @@ import FlightChess.View.DiceClickObserver;
 @SuppressWarnings("serial")
 public class GameView extends JPanel{
     private ArrayList<DiceClickObserver> diceObservers;
-    private JPanel gamePanel;
+    private GamePanel gamePanel;
     private JPanel infoPanel;
     private JLabel dice;
 
@@ -62,6 +56,7 @@ public class GameView extends JPanel{
      * Init game view
      */
     public void InitGameView(){
+        gamePanel.init();
     }
 
     /**
