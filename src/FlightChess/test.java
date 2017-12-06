@@ -20,7 +20,9 @@ public class test{
          frame.setContentPane(mainView);
          frame.setVisible(true);
 
-         MainController mainController = new MainController(mainView);
+         Game game = new Game();
+
+         MainController mainController = new MainController(game,mainView);
 
         /** Model Test */
         // Game game = new Game();
