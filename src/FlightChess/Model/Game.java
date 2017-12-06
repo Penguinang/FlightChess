@@ -65,6 +65,9 @@ public class Game {
 		int dice = dice_generator.nextInt(5)+1;
 		gv.PlayDiceAnimation(dice);
 		this.getCurrentBoat().advance(dice,gv);
+		this.checkCurrentGrid(gv);
+		this.checkWinner(gv);
+		this.switchPlayer();
 		return dice;
 	}
 	
@@ -125,8 +128,8 @@ public class Game {
 		for(int i=0;i<this.boats.length;i++) {
 			if(this.boats[i].getCurrent_pos()==FINAL_GRID) {
 				System.out.println("船"+i+"获胜");
-				//gv.gameEnd(i);
 				this.game_state = false;
+				//gv.gameEnd(i);
 				return i;
 			}
 		}
