@@ -19,9 +19,9 @@ public class MainController implements StartButtonObserver{
     @Override
     public void OnGameStarted(){
         //XXX
-        // mainView.StartGame();
+        mainView.StartGame();
 
-        // gameController = new GameController(mainView.getGameView());
+        gameController = new GameController(mainView.getGameView());
 
         // game.start
     }
