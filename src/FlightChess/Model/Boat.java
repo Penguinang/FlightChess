@@ -12,7 +12,6 @@ public class Boat {
 	/** Whether or not to be banned for a round */
 	private boolean grounded;
 
-	
 	/**
 	 * constructor
 	 * @param i ID of boat
@@ -27,9 +26,11 @@ public class Boat {
 	/**
 	 * To advance the ship in the sea and update the current position of the ship
 	 * @param i Forward step
+	 * @param g Game view
 	 */
-	public void Advance(int i) {
-		this.current_pos=(this.current_pos+i)%(35);
+	public void advance(int i,Game g) {
+		this.setCurrent_pos((this.current_pos+i)%35);
+		//g.getMainview().getGameView().AdvanceForBoatByStep(g.getCurrent_boat(),i);
 	}
 	
 	

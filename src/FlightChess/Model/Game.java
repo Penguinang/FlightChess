@@ -20,6 +20,14 @@ public class Game {
     /** The current activated boat */
 	private int current_boat;
 	
+	public MainView getMainview() {
+		return mainview;
+	}
+
+	public void setMainview(MainView mainview) {
+		this.mainview = mainview;
+	}
+
 	/** Terminal coordinates */
 	public static final int FINAL_GRID = 34; 
 	/** The coordinates of the props moving forward */
@@ -51,7 +59,7 @@ public class Game {
 	}
 	
 	/** start the game */
-	public void StartGame(MainView mv) {
+	public void startGame(MainView mv) {
 		mv.StartGame();
 	}
 
@@ -61,7 +69,7 @@ public class Game {
 	 */
 	public int onClickDice(){
 		int dice = dice_generator.nextInt(5)+1;
-		this.getCurrentBoat().advance(dice);
+		this.getCurrentBoat().advance(dice,this);
 		return dice;
 	}
 	
@@ -78,13 +86,13 @@ public class Game {
 		int i;
 		for(i = 0;i<PROP1_GRID.length;i++) {
 			if(this.boats[this.current_boat].getCurrent_pos()==PROP1_GRID[i]) {
-				this.boats[this.current_boat].advance(FOWARD_STEP);
+				this.boats[this.current_boat].advance(FOWARD_STEP,this);
 				System.out.println(this.getCurrent_boat()+"吃到道具1,多走5格");
 			}
 		}
 		for(i=0;i<PROP2_GRID.length;i++) {
 			if(this.boats[this.current_boat].getCurrent_pos()==PROP2_GRID[i]) {
-				this.boats[this.current_boat].advance(BACK_STEP);
+				this.boats[this.current_boat].advance(BACK_STEP,this);
 				System.out.println(this.getCurrent_boat()+"吃到道具2,后退5格");
 				
 			}
@@ -122,6 +130,7 @@ public class Game {
 		for(int i=0;i<this.boats.length;i++) {
 			if(this.boats[i].getCurrent_pos()==FINAL_GRID) {
 				System.out.println("船"+i+"获胜");
+				//this.getMainview().getGameView().gameEnd(i);
 				this.game_state = false;
 				return i;
 			}
@@ -140,7 +149,7 @@ public class Game {
 	}
      
      //游戏过程
-    /*
+    
       public void runGame() {
     	 while(game_state) {
     			 System.out.println(this.getCurrent_boat()+"船走了"+this.onClickDice()+"步");
@@ -152,16 +161,16 @@ public class Game {
     		 }
     	 }
      }
-    */
+  
 
     //Model测试
-    /*
+   
        public static void main(String[] args) {
     
     	Game g = new Game();
     	g.runGame();
     }
-     */
+    
 
     public int getCurrent_boat() {
         return current_boat;
