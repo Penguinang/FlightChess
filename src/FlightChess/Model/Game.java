@@ -65,6 +65,7 @@ public class Game {
 		int dice = dice_generator.nextInt(5)+1;
 		gv.PlayDiceAnimation(dice);
 		this.getCurrentBoat().advance(dice,gv);
+		gv.printMessage("船"+this.getCurrent_boat()+"向前"+dice+"步");
 		this.checkCurrentGrid(gv);
 		this.checkWinner(gv);
 		this.switchPlayer();
@@ -85,25 +86,25 @@ public class Game {
 		for(i = 0;i<PROP1_GRID.length;i++) {
 			if(this.boats[this.current_boat].getCurrent_pos()==PROP1_GRID[i]) {
 				this.boats[this.current_boat].advance(FOWARD_STEP,gv);
-				System.out.println(this.getCurrent_boat()+"吃到道具1,多走5格");
+				gv.printMessage(this.getCurrent_boat()+"吃到道具1,多走5格");
 			}
 		}
 		for(i=0;i<PROP2_GRID.length;i++) {
 			if(this.boats[this.current_boat].getCurrent_pos()==PROP2_GRID[i]) {
 				this.boats[this.current_boat].advance(BACK_STEP,gv);
-				System.out.println(this.getCurrent_boat()+"吃到道具2,后退5格");
+				gv.printMessage(this.getCurrent_boat()+"吃到道具2,后退5格");
 				
 			}
 		}
 		for(i=0;i<PROP3_GRID.length;i++) {
 			if(this.boats[this.current_boat].getCurrent_pos()==PROP3_GRID[i]) {
 				this.boats[this.current_boat].setGrounded(true);
-				System.out.println(this.getCurrent_boat()+"吃到道具3,暂停一轮");
+				gv.printMessage(this.getCurrent_boat()+"吃到道具3,暂停一轮");
 			}
 		}
 		for(i=0;i<PROP4_GRID.length;i++) {
 			if(this.boats[this.current_boat].getCurrent_pos()==PROP4_GRID[i]) {
-				System.out.println(this.getCurrent_boat()+"吃到道具4,再走一次");
+				gv.printMessage(this.getCurrent_boat()+"吃到道具4,再走一次");
 				this.setCurrent_boat( (this.current_boat+2)%this.boats.length);
 			}
 		}
@@ -127,7 +128,7 @@ public class Game {
 	public int checkWinner(GameView gv) {
 		for(int i=0;i<this.boats.length;i++) {
 			if(this.boats[i].getCurrent_pos()==FINAL_GRID) {
-				System.out.println("船"+i+"获胜");
+				gv.printMessage("船"+i+"获胜");
 				this.game_state = false;
 				gv.gameEnd(i);
 				return i;
@@ -137,14 +138,13 @@ public class Game {
 	}
 	
 	/** output current state on console */
-    public void showCurrentState(){
-		for(Boat s : this.boats){
-			String res;
-			res = "The "+s.getId()+" boat is at"+s.getCurrent_pos();
-			System.out.println(res);
-		}
-		System.out.println("----------------------------------");
-	}
+//    public void showCurrentState(GameView gv){
+//		for(Boat s : this.boats){
+//			String res;
+//			res = "The "+s.getId()+" boat is at"+s.getCurrent_pos();
+//			gv.printMessage(res);
+//		}
+//	}
      
    
     public int getCurrent_boat() {
