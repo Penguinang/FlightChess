@@ -5,17 +5,18 @@ package FlightChess.Model;
  */
 
 public class Boat {
-	/** 每个小船对应的ID */
+	/** the ID of each boat */
 	private int id; 
-	/** 小船当前的位置 */
+	/** current position of boat */
 	private int current_pos;
-	/** 是否被禁足一轮 */
+	/** Whether or not to be banned for a round */
 	private boolean grounded;
+
 	
 	/**
-	 * 小船构造函数
-	 * @param i 小船ID
-	 * @param cp 小船初始位置
+	 * constructor
+	 * @param i ID of boat
+	 * @param cp the initial position
 	 */
 	public Boat(int i, int cp) {
 		this.id = i;
@@ -24,11 +25,11 @@ public class Boat {
 	}
 	
 	/**
-	 * 使船在海中前进,更新船的当前位置
-	 * @param i 船在海中前进的步数
+	 * To advance the ship in the sea and update the current position of the ship
+	 * @param i Forward step
 	 */
-	public void advance(int i) {
-		this.current_pos=(this.current_pos+i)%35;
+	public void Advance(int i) {
+		this.current_pos=(this.current_pos+i)%(35);
 	}
 	
 	
