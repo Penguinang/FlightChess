@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<XMI xmi.version="1.2" timestamp="2017-12-06T19:47:34" verified="false" xmlns:UML="http://schema.omg.org/spec/UML/1.4">
+<XMI xmi.version="1.2" timestamp="2017-12-06T22:01:43" verified="false" xmlns:UML="http://schema.omg.org/spec/UML/1.4">
  <XMI.header>
   <XMI.documentation>
    <XMI.exporter>umbrello uml modeller http://umbrello.kde.org</XMI.exporter>
@@ -88,6 +88,11 @@
               <UML:Parameter visibility="private" isSpecification="false" value="" name="number" xmi.id="ug4Pe7PPzQWNr" type="u9Bb1dUYMSYXw"/>
              </UML:BehavioralFeature.parameter>
             </UML:Operation>
+            <UML:Operation visibility="public" isSpecification="false" name="printMessage" isAbstract="false" isQuery="false" comment="输出玩家发生的事件信息到屏幕" xmi.id="ufnSDRjrov4Iv" isRoot="false" isLeaf="false">
+             <UML:BehavioralFeature.parameter>
+              <UML:Parameter visibility="private" isSpecification="false" value="" name="message" xmi.id="uXEggqaevEcKZ" type="uqvpcLaYUcZQm"/>
+             </UML:BehavioralFeature.parameter>
+            </UML:Operation>
            </UML:Classifier.feature>
           </UML:Class>
           <UML:Class namespace="uBmjWwlM8OJ0C" visibility="public" isSpecification="false" name="WinnerDialog" isAbstract="false" xmi.id="uNuRX5axXg9Di" isRoot="false" isLeaf="false">
@@ -144,7 +149,7 @@
           <widgets>
            <floatingtext fillcolor="#ffff00" autoresize="1" xmi.id="uwUykE9zI5ipT" width="15" posttext="" font="Noto Sans,10,-1,5,50,0,0,0,0,0,Regular" usesdiagramusefillcolor="0" text="3" pretext="" textcolor="#000000" showstereotype="1" height="22" role="700" usefillcolor="1" usesdiagramfillcolor="0" linecolor="#ff0000" localid="u8FKmC3pAo2hl" y="62" isinstance="0" linewidth="0" x="-24"/>
            <classwidget fillcolor="#ffff00" autoresize="1" xmi.id="uCdYvsVGAZZ8i" width="413" font="Noto Sans,10,-1,5,50,0,0,0,0,0,Regular" usesdiagramusefillcolor="0" textcolor="#000000" showstereotype="1" showpubliconly="0" height="54" showpackage="1" showscope="1" usefillcolor="1" usesdiagramfillcolor="0" showattsigs="601" showoperations="1" showattributes="1" linecolor="#ff0000" localid="uZDsQ5D2WAViA" y="69" isinstance="0" linewidth="0" x="205" showopsigs="601"/>
-           <classwidget fillcolor="#ffff00" autoresize="1" xmi.id="uSRwSsACzWbTt" width="299" font="Noto Sans,10,-1,5,50,0,0,0,0,0,Regular" usesdiagramusefillcolor="0" textcolor="#000000" showstereotype="1" showpubliconly="0" height="135" showpackage="1" showscope="1" usefillcolor="1" usesdiagramfillcolor="0" showattsigs="601" showoperations="1" showattributes="1" linecolor="#ff0000" localid="uIjEsb2eMiVJV" y="-196" isinstance="0" linewidth="0" x="137" showopsigs="601"/>
+           <classwidget fillcolor="#ffff00" autoresize="1" xmi.id="uSRwSsACzWbTt" width="299" font="Noto Sans,10,-1,5,50,0,0,0,0,0,Regular" usesdiagramusefillcolor="0" textcolor="#000000" showstereotype="1" showpubliconly="0" height="153" showpackage="1" showscope="1" usefillcolor="1" usesdiagramfillcolor="0" showattsigs="601" showoperations="1" showattributes="1" linecolor="#ff0000" localid="uIjEsb2eMiVJV" y="-196" isinstance="0" linewidth="0" x="137" showopsigs="601"/>
            <classwidget fillcolor="#ffff00" autoresize="1" xmi.id="uxzUbX5QZzwuy" width="229" font="Noto Sans,10,-1,5,50,0,0,0,0,0,Regular" usesdiagramusefillcolor="0" textcolor="#000000" showstereotype="1" showpubliconly="0" height="90" showpackage="1" showscope="1" usefillcolor="1" usesdiagramfillcolor="0" showattsigs="601" showoperations="1" showattributes="1" linecolor="#ff0000" localid="uMTHAZDToRBOX" y="-201" isinstance="0" linewidth="0" x="-260" showopsigs="601"/>
            <classwidget fillcolor="#ffff00" autoresize="1" xmi.id="uqu60puUxFxQY" width="374" font="Noto Sans,10,-1,5,50,0,0,0,0,0,Regular" usesdiagramusefillcolor="0" textcolor="#000000" showstereotype="1" showpubliconly="0" height="126" showpackage="1" showscope="1" usefillcolor="1" usesdiagramfillcolor="0" showattsigs="601" showoperations="1" showattributes="1" linecolor="#ff0000" localid="ukco9MM0kXnBC" y="43" isinstance="0" linewidth="0" x="-251" showopsigs="601"/>
           </widgets>
@@ -231,16 +236,19 @@
           </messages>
           <associations/>
          </diagram>
-         <diagram fillcolor="#ffff00" name="ClickDice" xmi.id="u0IVcnVBJ2rol" type="3" showops="1" documentation="" showopsig="1" font="Noto Sans,10,-1,5,50,0,0,0,0,0,Regular" snapx="25" canvaswidth="743" textcolor="#000000" showpubliconly="0" showstereotype="1" snapgrid="0" autoincrementsequence="0" backgroundcolor="#ffffff" griddotcolor="#d3d3d3" showpackage="1" showscope="1" showattsig="1" snapy="25" usefillcolor="1" snapcsgrid="0" isopen="1" showgrid="0" canvasheight="523" showattribassocs="1" linecolor="#ff0000" showatts="1" zoom="111.304347826087" localid="-1" linewidth="0">
+         <diagram fillcolor="#ffff00" name="ClickDice" xmi.id="u0IVcnVBJ2rol" type="3" showops="1" documentation="" showopsig="1" font="Noto Sans,10,-1,5,50,0,0,0,0,0,Regular" snapx="25" canvaswidth="743" textcolor="#000000" showpubliconly="0" showstereotype="1" snapgrid="0" autoincrementsequence="0" backgroundcolor="#ffffff" griddotcolor="#d3d3d3" showpackage="1" showscope="1" showattsig="1" snapy="25" usefillcolor="1" snapcsgrid="0" isopen="1" showgrid="0" canvasheight="523" showattribassocs="1" linecolor="#ff0000" showatts="1" zoom="123" localid="-1" linewidth="0">
           <widgets>
            <objectwidget fillcolor="none" autoresize="1" xmi.id="uCdYvsVGAZZ8i" width="50" multipleinstance="0" font="Noto Sans,10,-1,5,50,0,0,0,0,0,Regular" usesdiagramusefillcolor="1" textcolor="#000000" showstereotype="1" height="28" usefillcolor="1" drawasactor="0" usesdiagramfillcolor="1" decon="0" linecolor="#ff0000" localid="uMnuouYRNb5X8" y="80" isinstance="0" linewidth="0" x="-557"/>
-           <objectwidget fillcolor="none" autoresize="1" xmi.id="uqu60puUxFxQY" width="56" multipleinstance="0" font="Noto Sans,10,-1,5,50,0,0,0,0,0,Regular" usesdiagramusefillcolor="1" textcolor="#000000" showstereotype="1" height="28" usefillcolor="1" drawasactor="0" usesdiagramfillcolor="1" decon="0" linecolor="#ff0000" localid="unFw9HX7ftoi3" y="80" isinstance="0" linewidth="0" x="-708"/>
            <objectwidget fillcolor="none" autoresize="1" xmi.id="uxzUbX5QZzwuy" width="118" multipleinstance="0" font="Noto Sans,10,-1,5,50,0,0,0,0,0,Regular" usesdiagramusefillcolor="1" textcolor="#000000" showstereotype="1" height="28" usefillcolor="1" drawasactor="0" usesdiagramfillcolor="1" decon="0" linecolor="#ff0000" localid="uVLiUmWCSW0Kb" y="80" isinstance="0" linewidth="0" x="-914"/>
            <objectwidget fillcolor="none" autoresize="1" xmi.id="uSRwSsACzWbTt" width="85" multipleinstance="0" font="Noto Sans,10,-1,5,50,0,0,0,0,0,Regular" usesdiagramusefillcolor="1" textcolor="#000000" showstereotype="1" height="28" usefillcolor="1" drawasactor="0" usesdiagramfillcolor="1" decon="0" linecolor="#ff0000" localid="uJiXA7Uz6BbIZ" y="80" isinstance="0" linewidth="0" x="-355"/>
+           <objectwidget fillcolor="none" autoresize="1" xmi.id="uqu60puUxFxQY" width="56" multipleinstance="0" font="Noto Sans,10,-1,5,50,0,0,0,0,0,Regular" usesdiagramusefillcolor="1" textcolor="#000000" showstereotype="1" height="28" usefillcolor="1" drawasactor="0" usesdiagramfillcolor="1" decon="0" linecolor="#ff0000" localid="unFw9HX7ftoi3" y="80" isinstance="0" linewidth="0" x="-708"/>
           </widgets>
           <messages>
            <messagewidget fillcolor="none" autoresize="1" xmi.id="uHxAvSzgXD05y" width="366" operation="uHxAvSzgXD05y" font="Noto Sans,10,-1,5,50,0,0,0,0,0,Regular" usesdiagramusefillcolor="1" widgetaid="unFw9HX7ftoi3" widgetbid="uJiXA7Uz6BbIZ" textcolor="none" showstereotype="1" height="23" usefillcolor="1" usesdiagramfillcolor="1" sequencemessagetype="1001" textid="u7PbpHrkuKmU1" linecolor="#ff0000" seqnum="" localid="uNO1SDPRi4ZA9" y="180.117" isinstance="0" linewidth="0" x="-679">
             <floatingtext fillcolor="none" autoresize="1" xmi.id="u7PbpHrkuKmU1" width="205" posttext="" font="Noto Sans,10,-1,5,50,0,0,0,0,0,Regular" usesdiagramusefillcolor="1" text="PlayDiceAnimation(number : int)" pretext="" textcolor="none" showstereotype="1" height="22" role="704" usefillcolor="1" usesdiagramfillcolor="1" linecolor="#ff0000" localid="uCO7LGoW1NqDB" y="158" isinstance="0" linewidth="0" x="-522"/>
+           </messagewidget>
+           <messagewidget fillcolor="none" autoresize="1" xmi.id="ufnSDRjrov4Iv" width="366" operation="ufnSDRjrov4Iv" font="Noto Sans,10,-1,5,50,0,0,0,0,0,Regular" usesdiagramusefillcolor="1" widgetaid="unFw9HX7ftoi3" widgetbid="uJiXA7Uz6BbIZ" textcolor="none" showstereotype="1" height="8" usefillcolor="1" usesdiagramfillcolor="1" sequencemessagetype="1001" textid="u3tCazVKUVHg5" linecolor="#ff0000" seqnum="" localid="uOqXLyiCi3xCu" y="256" isinstance="0" linewidth="0" x="-679">
+            <floatingtext fillcolor="none" autoresize="1" xmi.id="u3tCazVKUVHg5" width="201" posttext="" font="Noto Sans,10,-1,5,50,0,0,0,0,0,Regular" usesdiagramusefillcolor="1" text="printMessage(message : String)" pretext="" textcolor="none" showstereotype="1" height="22" role="704" usefillcolor="1" usesdiagramfillcolor="1" linecolor="#ff0000" localid="uHvMi4C6RQCEx" y="234" isinstance="0" linewidth="0" x="-518"/>
            </messagewidget>
            <messagewidget fillcolor="none" autoresize="1" xmi.id="ulGGQ5vRQB84f" width="92" operation="ulGGQ5vRQB84f" font="Noto Sans,10,-1,5,50,0,0,0,0,0,Regular" usesdiagramusefillcolor="1" widgetaid="unFw9HX7ftoi3" widgetbid="unFw9HX7ftoi3" textcolor="none" showstereotype="1" height="23" usefillcolor="1" usesdiagramfillcolor="1" sequencemessagetype="1000" textid="uZKNl2VQ0cj8Y" linecolor="#ff0000" seqnum="" localid="ucttS53l5YgA8" y="415.5" isinstance="0" linewidth="0" x="-682">
             <floatingtext fillcolor="none" autoresize="1" xmi.id="uZKNl2VQ0cj8Y" width="97" posttext="" font="Noto Sans,10,-1,5,50,0,0,0,0,0,Regular" usesdiagramusefillcolor="1" text="CheckWinner()" pretext="" textcolor="none" showstereotype="1" height="22" role="705" usefillcolor="1" usesdiagramfillcolor="1" linecolor="#ff0000" localid="u7eanE8GnoW5n" y="393" isinstance="0" linewidth="0" x="-677"/>
@@ -265,9 +273,6 @@
            </messagewidget>
            <messagewidget fillcolor="none" autoresize="1" xmi.id="uwd7ozHGnx53L" width="173" operation="uwd7ozHGnx53L" font="Noto Sans,10,-1,5,50,0,0,0,0,0,Regular" usesdiagramusefillcolor="1" widgetaid="uVLiUmWCSW0Kb" widgetbid="unFw9HX7ftoi3" textcolor="none" showstereotype="1" height="23" usefillcolor="1" usesdiagramfillcolor="1" sequencemessagetype="1001" textid="uXe0TVXYhmrJk" linecolor="#ff0000" seqnum="" localid="um4OWWXEvcAlm" y="163.625" isinstance="0" linewidth="0" x="-854">
             <floatingtext fillcolor="none" autoresize="1" xmi.id="uXe0TVXYhmrJk" width="360" posttext="" font="Noto Sans,10,-1,5,50,0,0,0,0,0,Regular" usesdiagramusefillcolor="1" text="OnClickDice(gameView : undef) : Classes::View::GameView" pretext="" textcolor="none" showstereotype="1" height="22" role="704" usefillcolor="1" usesdiagramfillcolor="1" linecolor="#ff0000" localid="uKebZ3p5xOqvP" y="141" isinstance="0" linewidth="0" x="-849"/>
-           </messagewidget>
-           <messagewidget fillcolor="none" autoresize="1" xmi.id="uWnfQftUBlINj" width="218" operation="uWnfQftUBlINj" font="Noto Sans,10,-1,5,50,0,0,0,0,0,Regular" usesdiagramusefillcolor="1" widgetaid="uMnuouYRNb5X8" widgetbid="uJiXA7Uz6BbIZ" textcolor="none" showstereotype="1" height="8" usefillcolor="1" usesdiagramfillcolor="1" sequencemessagetype="1001" textid="uFtPp6Qa3794T" linecolor="#ff0000" seqnum="" localid="uTt7hanKX8Wty" y="217" isinstance="0" linewidth="0" x="-531">
-            <floatingtext fillcolor="none" autoresize="1" xmi.id="uFtPp6Qa3794T" width="285" posttext="" font="Noto Sans,10,-1,5,50,0,0,0,0,0,Regular" usesdiagramusefillcolor="1" text="AdvanceForBoatByStep(boatID : int, step : int)" pretext="" textcolor="none" showstereotype="1" height="22" role="704" usefillcolor="1" usesdiagramfillcolor="1" linecolor="#ff0000" localid="uJjdL55ymtZ3E" y="195" isinstance="0" linewidth="0" x="-526"/>
            </messagewidget>
           </messages>
           <associations/>
@@ -335,6 +340,7 @@
        </UML:Association.connection>
       </UML:Association>
       <UML:Class namespace="Logical_View" visibility="public" isSpecification="false" name="Boat" isAbstract="false" xmi.id="uYQONd11DlT9j" isRoot="false" isLeaf="false"/>
+      <UML:Class namespace="Logical_View" visibility="public" isSpecification="false" name="String" isAbstract="false" xmi.id="uqvpcLaYUcZQm" isRoot="false" isLeaf="false"/>
      </UML:Namespace.ownedElement>
     </UML:Model>
     <UML:Model namespace="m1" visibility="public" isSpecification="false" name="Use Case View" isAbstract="false" xmi.id="Use_Case_View" isRoot="false" isLeaf="false">
@@ -454,7 +460,7 @@
   </UML:Model>
  </XMI.content>
  <XMI.extensions xmi.extender="umbrello">
-  <docsettings documentation="" viewid="u0IVcnVBJ2rol" uniqueid="u6ExJsayzjqin"/>
+  <docsettings documentation="" viewid="u0IVcnVBJ2rol" uniqueid="uXEggqaevEcKZ"/>
   <listview>
    <listitem id="Views" type="800" open="1">
     <listitem id="Component_View" type="821" open="1"/>
@@ -498,6 +504,7 @@
         <listitem id="u5S8tYp1nY7Cv" type="815" open="0"/>
         <listitem id="uIeay9DRYe2My" type="815" open="0"/>
         <listitem id="uHxAvSzgXD05y" type="815" open="0"/>
+        <listitem id="ufnSDRjrov4Iv" type="815" open="0"/>
         <listitem id="uNoAvxUnXR3r8" type="815" open="0"/>
        </listitem>
        <listitem id="uHKQ3sL7EdsX8" type="813" open="1">
@@ -539,6 +546,7 @@
       <listitem label="RestartGame" id="uGZ4uh195SMfg" type="810" open="0"/>
       <listitem label="StartGame" id="ugUdqLHF2Yy7I" type="810" open="0"/>
      </listitem>
+     <listitem id="uqvpcLaYUcZQm" type="813" open="1"/>
     </listitem>
     <listitem id="Use_Case_View" type="802" open="0">
      <listitem id="uWDphIGj851uK" type="804" open="0">
