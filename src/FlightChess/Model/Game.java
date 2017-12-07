@@ -25,13 +25,13 @@ public class Game {
 	/** Terminal coordinates */
 	public static final int FINAL_GRID = 34; 
 	/** The coordinates of the props moving forward */
-	public static final int[] PROP1_GRID = {3,8,19,33};
+	public static final int[] PROP1_GRID = {4,8,19,33};
 	/** The coordinates of the props moving back */
 	public static final int[] PROP2_GRID = {7,14,25};
 	/** The coordinates of the props a round of prohibition */
 	public static final int[] PROP3_GRID = {22,31};
 	/** The coordinates of the props taking one more round */
-	public static final int[] PROP4_GRID = {13,29};
+	public static final int[] PROP4_GRID = {16,29};
 	/** The forward step of prop1 */
 	public static final int FOWARD_STEP = 5;
 	/** The back step of prop2 */
