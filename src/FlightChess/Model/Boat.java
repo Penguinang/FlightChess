@@ -31,7 +31,10 @@ public class Boat {
 	 * @param g Game view
 	 */
 	public void advance(int i,GameView gv) {
-		this.setCurrent_pos((this.current_pos+i)%35);
+		if((this.current_pos+i)>34) {
+			i=2*(34-this.getCurrent_pos())-i;
+		}
+		this.setCurrent_pos(this.getCurrent_pos()+i);
 		gv.advanceForBoatByStep(this.id,i);
 	}
 	
