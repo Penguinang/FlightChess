@@ -9,9 +9,8 @@ import FlightChess.Model.Game;
 import FlightChess.View.MainView;
 
 public class test{
+    /** Application Entry */
     public static void main(String[] args){
-
-         /** View Test */
          JFrame frame = new JFrame("Aeroplane Chess");
          frame.setMinimumSize(new Dimension(500,600));
          frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -23,9 +22,5 @@ public class test{
          Game game = new Game();
 
          MainController mainController = new MainController(game,mainView);
-
-        /** Model Test */
-        // Game game = new Game();
-        // game.runGame();
     }
 }

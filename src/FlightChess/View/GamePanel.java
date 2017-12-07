@@ -37,7 +37,11 @@ class GamePanel extends JPanel {
             new Dimension(258, 525), new Dimension(248, 598), new Dimension(224, 671), new Dimension(113, 675),
             new Dimension(70, 600), new Dimension(70, 550), new Dimension(70, 491), new Dimension(70, 412),
             new Dimension(70, 340), new Dimension(70, 260), new Dimension(160, 217), new Dimension(259, 185) };
-
+    
+    /**
+     * Constructor 
+     * @param bkgPath
+     */
     public GamePanel(String bkgPath) {
         //bkg
         ImageIcon bkgIcon = new ImageIcon(bkgPath);
@@ -102,9 +106,7 @@ class GamePanel extends JPanel {
         scheduler.schedule(updatePosition, 0, TimeUnit.MILLISECONDS);
     }
 
-    /**
-     * Override draw function to draw bkg
-     */
+    /** Override draw function to draw bkg */
     @Override
     public void paint(Graphics g) {
         super.paint(g);
@@ -117,6 +119,7 @@ class GamePanel extends JPanel {
         }
     }
 
+    /** Override size */
     @Override
     public Dimension getPreferredSize() {
         return new Dimension(mapWidth, mapHeight);

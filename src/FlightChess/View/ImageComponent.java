@@ -17,6 +17,7 @@ class ImageComponent extends Component{
     BufferedImage img;
     
     /**
+     * constructor
      * @param path  图片路径，以项目根目录开始
      */
     ImageComponent(String path){
@@ -31,11 +32,13 @@ class ImageComponent extends Component{
         }
     }
 
+    /** Override paint to draw image */
     @Override
     public void paint(Graphics g){
         g.drawImage(img, 0,0,null);
     }
 
+    /** Override size to fit image */
     @Override
     public Dimension getPreferredSize(){
         return new Dimension(img.getWidth(),img.getHeight());

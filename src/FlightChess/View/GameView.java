@@ -22,6 +22,7 @@ public class GameView extends JPanel {
 
     private InformationBoard informationBoard;
 
+    /** Constructor */
     public GameView() {
         diceObservers = new ArrayList<DiceClickObserver>();
 
@@ -77,6 +78,7 @@ public class GameView extends JPanel {
     /**
      * Add Dice Observer
      * @param observer observer to add
+     * @return whether listen successfully
      */
     public boolean AddDiceObserver(DiceClickObserver observer) {
         diceObservers.add(observer);
@@ -85,6 +87,8 @@ public class GameView extends JPanel {
 
     /** 
      * Move boat
+     * @param id id of boat to move
+     * @param step step to move
      */
     public void advanceForBoatByStep(int id,int step){
         gamePanel.moveBoat(id, step);
@@ -141,7 +145,7 @@ public class GameView extends JPanel {
 
     /**
      * Game end, print winner message
-     * @param id player's id
+     * @param message message to display
      */
     public void gameEnd(String message) {
         WinnerDialog endDialog = new WinnerDialog();

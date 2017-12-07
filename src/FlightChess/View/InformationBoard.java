@@ -15,6 +15,7 @@ public class InformationBoard extends JPanel {
     private JList<String> list;
     private JLabel curPlayer;
 
+    /** Constructor */
     public InformationBoard(){
         super();
         this.setLayout(new BorderLayout());
@@ -41,6 +42,7 @@ public class InformationBoard extends JPanel {
         updateData();
     }
 
+    /** update message board */
     public void updateData(){
         list.setListData(messages);
     }

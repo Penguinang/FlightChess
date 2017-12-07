@@ -9,12 +9,19 @@ import javax.swing.JPanel;
 
 public class StartPanel extends JPanel{
     private Image bkg;
+    
+    /**
+     * @param bkgPath background image's path
+     */
     public StartPanel(String bkgPath){
         super();
         bkg = new ImageIcon(bkgPath).getImage();
         setPreferredSize(new Dimension(500,600));
     }
 
+    /**
+     * Override paint to draw image
+     */
     @Override
     public void paint(Graphics g){
         super.paint(g);
