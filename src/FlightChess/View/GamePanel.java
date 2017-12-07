@@ -20,14 +20,41 @@ class GamePanel extends JPanel{
     private int boatWidth;
     private int boatHeight;
     private Dimension[] points  = {
-        new Dimension(100,260),
-        new Dimension(86,340),
-        new Dimension(94,412),
-        new Dimension(76,530),
-        new Dimension(76,600),
-        new Dimension(123,662),
-        new Dimension(239,668),
-        new Dimension(254,588)
+        new Dimension(270,113),
+        new Dimension(389,113),
+        new Dimension(506,113),
+        new Dimension(624,113),
+        new Dimension(754,113),
+        new Dimension(887,113),
+        new Dimension(887,186),
+        new Dimension(887,241),
+        new Dimension(793,280),
+        new Dimension(700,316),
+        new Dimension(700,391),
+        new Dimension(702,465),
+        new Dimension(795,510),
+        new Dimension(882,546),
+        new Dimension(882,615),
+        new Dimension(840,672),
+        new Dimension(735,675),
+        new Dimension(623,675),
+        new Dimension(509,672),
+        new Dimension(435,612),
+        new Dimension(436,533),
+        new Dimension(424,451),
+        new Dimension(303,450),
+        new Dimension(258,525),
+        new Dimension(248,598),
+        new Dimension(224,671),
+        new Dimension(113,675),
+        new Dimension(70,600),
+        new Dimension(70,550),
+        new Dimension(70,491),
+        new Dimension(70,412),
+        new Dimension(70,340),
+        new Dimension(70,260),
+        new Dimension(160,217),
+        new Dimension(259,185)
     };
 
     public GamePanel(String bkgPath){
@@ -42,8 +69,8 @@ class GamePanel extends JPanel{
         boats[1] = new ImageIcon("res/view/orange.png").getImage();
         boats[2] = new ImageIcon("res/view/yellow.png").getImage();        
         boatPositions = new int[3];
-        boatWidth = 50;
-        boatHeight = 50;
+        boatWidth = 60;
+        boatHeight = 40;
     }
 
     /**
@@ -81,9 +108,9 @@ class GamePanel extends JPanel{
         g.drawImage(bkg,0,0,mapWidth,mapHeight,this);
         for(int i = 0;i<3;i++){
             int grid = boatPositions[i];
-            int x = points[grid].width/2;
+            int x = (points[grid].width+25)/2;
             int y = points[grid].height/2;
-            g.drawImage(boats[i],x,y,boatWidth,boatHeight,this);
+            g.drawImage(boats[i],x-boatWidth/2,y-boatHeight,boatWidth,boatHeight,this);
         }
     }
      

@@ -47,22 +47,14 @@ public class GameView extends JPanel {
                     observer.OnDiceClicked();
                 }
             }
-
             @Override
-            public void mousePressed(MouseEvent e) {
-            }
-
+            public void mousePressed(MouseEvent e) {}
             @Override
-            public void mouseExited(MouseEvent e) {
-            }
-
+            public void mouseExited(MouseEvent e) {}
             @Override
-            public void mouseEntered(MouseEvent e) {
-            }
-
+            public void mouseEntered(MouseEvent e) {}
             @Override
-            public void mouseClicked(MouseEvent e) {
-            }
+            public void mouseClicked(MouseEvent e) {}
         });
         infoPanel.add(dice);
         this.add(infoPanel, BorderLayout.SOUTH);
@@ -118,22 +110,14 @@ public class GameView extends JPanel {
                     System.out.println("click");
                 }
             }
-
             @Override
-            public void mousePressed(MouseEvent e) {
-            }
-
+            public void mousePressed(MouseEvent e) {}
             @Override
-            public void mouseExited(MouseEvent e) {
-            }
-
+            public void mouseExited(MouseEvent e) {}
             @Override
-            public void mouseEntered(MouseEvent e) {
-            }
-
+            public void mouseEntered(MouseEvent e) {}
             @Override
-            public void mouseClicked(MouseEvent e) {
-            }
+            public void mouseClicked(MouseEvent e) {}
         });
 
         this.updateUI();

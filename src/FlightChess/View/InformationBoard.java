@@ -1,13 +1,11 @@
 package FlightChess.View;
 
 import java.awt.Dimension;
-import java.util.ArrayList;
 import java.util.Vector;
 
 import javax.swing.JList;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
-import javax.swing.JTextField;
 
 public class InformationBoard extends JPanel {
     private Vector<String>  messages;
