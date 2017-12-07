@@ -40,9 +40,9 @@ public class Game {
 	
 	public Game() {
 		super();
-		Boat b1 = new Boat(0,0,"green");
-		Boat b2 = new Boat(1,0,"orange");
-		Boat b3 = new Boat(2,0,"yellow");
+		Boat b1 = new Boat(0,0,"绿色玩家");
+		Boat b2 = new Boat(1,0,"橙色玩家");
+		Boat b3 = new Boat(2,0,"黄色玩家");
 		this.boats = new Boat[3];
 		boats[0] = b1;
 		boats[1] = b2;
