@@ -65,10 +65,11 @@ public class Game {
 		int dice = dice_generator.nextInt(5)+1;
 		gv.PlayDiceAnimation(dice);
 		this.getCurrentBoat().advance(dice,gv);
-		gv.printMessage("船"+this.getCurrent_boat()+"向前"+dice+"步");
+		gv.printMessage("船"+this.getCurrent_boat()+"向前"+dice+"步"+"到达"+this.getCurrentBoat().getCurrent_pos());
 		this.checkCurrentGrid(gv);
 		this.checkWinner(gv);
 		this.switchPlayer();
+		//gv.switchPlayer("轮到船"+this.getCurrent_boat()+"行驶");
 		return dice;
 	}
 	
