@@ -36,7 +36,6 @@ public class GameView extends JPanel {
         infoPanel.setLayout(new GridLayout(1, 2));
 
         informationBoard = new InformationBoard();
-        informationBoard.AddMessage("test message");
         infoPanel.add(informationBoard);
 
         dice = new JLabel(new ImageIcon("res/view/dice.png"));
