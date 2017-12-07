@@ -76,7 +76,6 @@ class GamePanel extends JPanel {
             return;
         }
 
-        ScheduledFuture<?> updateHandle;
         Runnable updatePosition = new Runnable() {
             @Override
             public void run() {
@@ -91,7 +90,7 @@ class GamePanel extends JPanel {
             }
         };
 
-        updateHandle = scheduler.scheduleAtFixedRate(updatePosition, boatMoveInterval, boatMoveInterval, TimeUnit.MILLISECONDS);
+        ScheduledFuture<?> updateHandle = scheduler.scheduleAtFixedRate(updatePosition, boatMoveInterval, boatMoveInterval, TimeUnit.MILLISECONDS);
         scheduler.schedule(new Runnable() {
             @Override
             public void run() {
