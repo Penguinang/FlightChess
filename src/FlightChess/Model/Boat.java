@@ -3,7 +3,7 @@ package FlightChess.Model;
 import FlightChess.View.GameView;
 
 /**
- * 小船类
+ * Class Boat
  */
 
 public class Boat {
@@ -13,16 +13,20 @@ public class Boat {
 	private int current_pos;
 	/** Whether or not to be banned for a round */
 	private boolean grounded;
+	/** the color of each boat */
+	private String color;
 
 	/**
 	 * constructor
 	 * @param i ID of boat
 	 * @param cp the initial position
+	 * @param c color
 	 */
-	public Boat(int i, int cp) {
+	public Boat(int i, int cp,String c) {
 		this.id = i;
 		this.current_pos = cp;
 		this.grounded = false;
+		this.color = c;
 	}
 	
 	/**
@@ -32,44 +36,25 @@ public class Boat {
 	 */
 	public void advance(int i,GameView gv) {
 		if((this.current_pos+i)>34) {
+			gv.advanceForBoatByStep(this.id,34-this.getCurrent_pos());
+			gv.advanceForBoatByStep(this.id, -(i-(34-this.getCurrent_pos())));
 			i=2*(34-this.getCurrent_pos())-i;
 		}
+		else {
+			gv.advanceForBoatByStep(this.id, i);
+		}
 		this.setCurrent_pos(this.getCurrent_pos()+i);
-		gv.advanceForBoatByStep(this.id,i);
 	}
 	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
+
+	public String getColor() {
+		return color;
+	}
+
+	public void setColor(String color) {
+		this.color = color;
+	}
+
 	public int getId() {
 		return id;
 	}

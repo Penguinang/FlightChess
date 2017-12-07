@@ -40,9 +40,9 @@ public class Game {
 	
 	public Game() {
 		super();
-		Boat b1 = new Boat(0,0);
-		Boat b2 = new Boat(1,0);
-		Boat b3 = new Boat(2,0);
+		Boat b1 = new Boat(0,0,"green");
+		Boat b2 = new Boat(1,0,"orange");
+		Boat b3 = new Boat(2,0,"yellow");
 		this.boats = new Boat[3];
 		boats[0] = b1;
 		boats[1] = b2;
@@ -65,11 +65,11 @@ public class Game {
 		int dice = dice_generator.nextInt(5)+1;
 		gv.PlayDiceAnimation(dice);
 		this.getCurrentBoat().advance(dice,gv);
-		gv.printMessage("船"+this.getCurrent_boat()+"向前"+dice+"步"+"到达"+this.getCurrentBoat().getCurrent_pos());
+		gv.printMessage(this.getCurrentBoat().getColor()+"向前"+dice+"步"+"到达第"+this.getCurrentBoat().getCurrent_pos()+"格");
 		this.checkCurrentGrid(gv);
 		this.checkWinner(gv);
 		this.switchPlayer();
-		gv.switchPlayer("轮到船"+this.getCurrent_boat()+"行驶");
+		gv.switchPlayer("轮到"+this.getCurrentBoat().getColor()+"行驶");
 		return dice;
 	}
 	
@@ -87,25 +87,25 @@ public class Game {
 		for(i = 0;i<PROP1_GRID.length;i++) {
 			if(this.boats[this.current_boat].getCurrent_pos()==PROP1_GRID[i]) {
 				this.boats[this.current_boat].advance(FOWARD_STEP,gv);
-				gv.printMessage(this.getCurrent_boat()+"吃到道具1,多走5格");
+				gv.printMessage(this.getCurrentBoat().getColor()+"到达灯塔,多走5格"+"到达第"+this.getCurrentBoat().getCurrent_pos()+"格");
 			}
 		}
 		for(i=0;i<PROP2_GRID.length;i++) {
 			if(this.boats[this.current_boat].getCurrent_pos()==PROP2_GRID[i]) {
 				this.boats[this.current_boat].advance(BACK_STEP,gv);
-				gv.printMessage(this.getCurrent_boat()+"吃到道具2,后退5格");
+				gv.printMessage(this.getCurrentBoat().getColor()+"捡到游泳圈,后退5格"+"到达第"+this.getCurrentBoat().getCurrent_pos()+"格");
 				
 			}
 		}
 		for(i=0;i<PROP3_GRID.length;i++) {
 			if(this.boats[this.current_boat].getCurrent_pos()==PROP3_GRID[i]) {
 				this.boats[this.current_boat].setGrounded(true);
-				gv.printMessage(this.getCurrent_boat()+"吃到道具3,暂停一轮");
+				gv.printMessage(this.getCurrentBoat().getColor()+"抛锚,暂停一轮");
 			}
 		}
 		for(i=0;i<PROP4_GRID.length;i++) {
 			if(this.boats[this.current_boat].getCurrent_pos()==PROP4_GRID[i]) {
-				gv.printMessage(this.getCurrent_boat()+"吃到道具4,再走一次");
+				gv.printMessage(this.getCurrentBoat().getColor()+"捡到方向盘,再走一次");
 				this.setCurrent_boat( (this.current_boat+2)%this.boats.length);
 			}
 		}
@@ -129,9 +129,9 @@ public class Game {
 	public int checkWinner(GameView gv) {
 		for(int i=0;i<this.boats.length;i++) {
 			if(this.boats[i].getCurrent_pos()==FINAL_GRID) {
-				gv.printMessage("船"+i+"获胜");
+				gv.printMessage(this.getBoats()[i].getColor()+"获胜");
 				this.game_state = false;
-				gv.gameEnd(i);
+				gv.gameEnd(this.getBoats()[i].getColor()+"获胜!");
 				return i;
 			}
 		}
