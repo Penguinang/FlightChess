@@ -132,6 +132,14 @@ public class GameView extends JPanel {
         informationBoard.AddMessage(message);
     }
 
+       /**
+     * show current player message
+     * @param info current player info to display in application
+     */
+    public void switchPlayer(String info){
+        informationBoard.switchPlayer(info);
+    }
+
     /**
      * Game end, print winner message
      * @param id player's id
