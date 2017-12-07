@@ -57,6 +57,7 @@ public class GameView extends JPanel {
             public void mouseClicked(MouseEvent e) {}
         });
         infoPanel.add(dice);
+        
         this.add(infoPanel, BorderLayout.SOUTH);
     }
 
@@ -137,7 +138,7 @@ public class GameView extends JPanel {
      */
     public void gameEnd(int boardID) {
         WinnerDialog endDialog = new WinnerDialog();
-        endDialog.showWinnerMessage("asdasdasd winner is asd");
+        endDialog.showWinnerMessage("Player #"+boardID+" is final winner!!!!!");
         endDialog.setVisible(true);
         endDialog.addWindowListener(new WindowListener(){
             @Override

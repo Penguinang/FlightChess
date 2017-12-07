@@ -13,7 +13,7 @@ public class test{
 
          /** View Test */
          JFrame frame = new JFrame("Aeroplane Chess");
-         frame.setMinimumSize(new Dimension(500,500));
+         frame.setMinimumSize(new Dimension(500,600));
          frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
          MainView mainView = new MainView();
