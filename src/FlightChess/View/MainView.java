@@ -12,7 +12,7 @@ public class MainView extends JPanel {
     /** Game Panel */
     private GameView gameView;
     /** Start Game Panel */
-    private JPanel startView;
+    private StartPanel startView;
     /** Observers List */
     private ArrayList<StartButtonObserver> startObservers;
 
@@ -20,7 +20,7 @@ public class MainView extends JPanel {
     public MainView() {
         startObservers = new ArrayList<StartButtonObserver>();
 
-        startView = new JPanel();
+        startView = new StartPanel("res/view/start.png");
         JButton startButton = new JButton("Start Game");
         startButton.addActionListener(new ActionListener(){
             @Override
