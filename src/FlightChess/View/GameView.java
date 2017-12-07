@@ -36,7 +36,6 @@ public class GameView extends JPanel {
         infoPanel.setLayout(new GridLayout(1, 2));
 
         informationBoard = new InformationBoard();
-        informationBoard.AddMessage("test message");
         infoPanel.add(informationBoard);
 
         dice = new JLabel(new ImageIcon("res/view/dice.png"));
@@ -144,9 +143,9 @@ public class GameView extends JPanel {
      * Game end, print winner message
      * @param id player's id
      */
-    public void gameEnd(int boardID) {
+    public void gameEnd(String message) {
         WinnerDialog endDialog = new WinnerDialog();
-        endDialog.showWinnerMessage("Player #"+boardID+" is final winner!!!!!");
+        endDialog.showWinnerMessage(message);
         endDialog.setVisible(true);
         endDialog.addWindowListener(new WindowListener(){
             @Override

@@ -53,7 +53,7 @@ class GamePanel extends JPanel {
         boatWidth = 60;
         boatHeight = 40;
 
-        scheduler = Executors.newScheduledThreadPool(6);
+        scheduler = Executors.newScheduledThreadPool(2);
     }
 
     /**
@@ -61,8 +61,8 @@ class GamePanel extends JPanel {
      */
     public void init() {
         boatPositions[0] = 0;
-        boatPositions[1] = 1;
-        boatPositions[2] = 2;
+        boatPositions[1] = 0;
+        boatPositions[2] = 0;
     }
 
     /** 
@@ -96,14 +96,9 @@ class GamePanel extends JPanel {
             @Override
             public void run() {
                 updateHandle.cancel(true);
+                System.out.println("move complete");
             }
-        }, (int)(boatMoveInterval * Math.abs(step+0.5)), TimeUnit.MILLISECONDS);
-
-        // boatPositions[index] += step;
-        // if (boatPositions[index] < 0)
-        //     boatPositions[index] = 0;
-        // if (boatPositions[index] > points.length - 1)
-        //     boatPositions[index] = points.length - 1;
+        }, (int)(boatMoveInterval * (Math.abs(step)+0.5)), TimeUnit.MILLISECONDS);
     }
 
     /**
