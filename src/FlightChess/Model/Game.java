@@ -69,7 +69,7 @@ public class Game {
 		this.checkCurrentGrid(gv);
 		this.checkWinner(gv);
 		this.switchPlayer();
-		//gv.switchPlayer("轮到船"+this.getCurrent_boat()+"行驶");
+		gv.switchPlayer("轮到船"+this.getCurrent_boat()+"行驶");
 		return dice;
 	}
 	
