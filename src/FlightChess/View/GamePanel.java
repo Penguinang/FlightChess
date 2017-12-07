@@ -53,7 +53,7 @@ class GamePanel extends JPanel {
         boatWidth = 60;
         boatHeight = 40;
 
-        scheduler = Executors.newScheduledThreadPool(2);
+        scheduler = Executors.newScheduledThreadPool(1);
     }
 
     /**
@@ -77,27 +77,29 @@ class GamePanel extends JPanel {
         }
 
         Runnable updatePosition = new Runnable() {
+            int curStep = 0;
             @Override
             public void run() {
-                System.out.println("update position");
-                boatPositions[index] += step / Math.abs(step);
-                if (boatPositions[index] < 0)
-                    boatPositions[index] = 0;
-                if (boatPositions[index] > points.length - 1)
-                    boatPositions[index] = points.length - 1;
-
-                updateUI();
+                while(curStep<Math.abs(step)){
+                    try{
+                        Thread.sleep(boatMoveInterval);
+                    }catch(Exception e){
+                        System.err.println(e.getMessage());
+                    }
+                    System.out.println("update position");
+                    boatPositions[index] += step / Math.abs(step);
+                    if (boatPositions[index] < 0)
+                        boatPositions[index] = 0;
+                    if (boatPositions[index] > points.length - 1)
+                        boatPositions[index] = points.length - 1;
+    
+                    updateUI();
+                    curStep ++;
+                }
             }
         };
 
-        ScheduledFuture<?> updateHandle = scheduler.scheduleAtFixedRate(updatePosition, boatMoveInterval, boatMoveInterval, TimeUnit.MILLISECONDS);
-        scheduler.schedule(new Runnable() {
-            @Override
-            public void run() {
-                updateHandle.cancel(true);
-                System.out.println("move complete");
-            }
-        }, (int)(boatMoveInterval * (Math.abs(step)+0.5)), TimeUnit.MILLISECONDS);
+        scheduler.schedule(updatePosition, 0, TimeUnit.MILLISECONDS);
     }
 
     /**
